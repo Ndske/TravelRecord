@@ -1,0 +1,175 @@
+10
+
+dir
+0
+http://10.24.22.208/svn/GeneDietApp_Free_iOS/TraveRecord/TraveRecord
+http://10.24.22.208/svn/GeneDietApp_Free_iOS
+add
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ffc60df7-e3e1-40db-9a40-267fd34fa125
+
+main.m
+file
+
+
+
+add
+
+TravelRecord-Info.plist
+file
+
+
+
+add
+
+Default@2x.png
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+
+SearchViewController.xib
+file
+
+
+
+add
+
+en.lproj
+dir
+
+
+
+add
+
+SearchViewController.h
+file
+
+
+
+add
+
+SearchViewController.m
+file
+
+
+
+add
+
+TravelRecord-Prefix.pch
+file
+
+
+
+add
+
+AppDelegate.h
+file
+
+
+
+add
+
+MapViewController.h
+file
+
+
+
+add
+
+SettingViewController.h
+file
+
+
+
+add
+
+AppDelegate.m
+file
+
+
+
+add
+
+Default.png
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+
+MapViewController.m
+file
+
+
+
+add
+
+SettingViewController.m
+file
+
+
+
+add
+
+TraveRecord.xcdatamodeld
+dir
+
+
+
+add
+
+Default-568h@2x.png
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+
+Const.h
+file
+
+
+
+add
+
