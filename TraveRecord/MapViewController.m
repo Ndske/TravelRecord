@@ -142,6 +142,7 @@
 - (NSString *)searchSpot:(NSString *)serchText
 {
     NSLog(@"%@",serchText);
+    HttpConnection *conn = [[[HttpConnection alloc]init]getAddressJson:serchText sensor:FALSE];
 }
 
 - (void)mapView:(GMSMapView *)mapView didTapInfoWindowOfMarker:(GMSMarker *)marker

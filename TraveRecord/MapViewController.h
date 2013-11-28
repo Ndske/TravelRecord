@@ -10,6 +10,7 @@
 #import "SettingViewController.h"
 #import <GoogleMaps/GoogleMaps.h>
 #import "SearchViewController.h"
+#import "HttpConnection.h"
 
 #define searchViewTitle @"スポット検索"
 #define addSpotViewTitle  @"スポット追加"

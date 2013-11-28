@@ -41,6 +41,7 @@
 		F66F4A9E183B7AF2009910FF /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F66F4A9C183B7AF2009910FF /* SettingViewController.m */; };
 		F66F4AA8183F6F9B009910FF /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F66F4AA6183F6F9A009910FF /* SearchViewController.m */; };
 		F66F4AA9183F6F9B009910FF /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F66F4AA7183F6F9A009910FF /* SearchViewController.xib */; };
+		F6A332BD184749CD00576FDD /* HttpConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A332BC184749CD00576FDD /* HttpConnection.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,8 @@
 		F66F4AA5183F6F99009910FF /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		F66F4AA6183F6F9A009910FF /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		F66F4AA7183F6F9A009910FF /* SearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
+		F6A332BB184749CD00576FDD /* HttpConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpConnection.h; sourceTree = "<group>"; };
+		F6A332BC184749CD00576FDD /* HttpConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpConnection.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +198,8 @@
 				F66F4AA5183F6F99009910FF /* SearchViewController.h */,
 				F66F4AA6183F6F9A009910FF /* SearchViewController.m */,
 				F66F4AA7183F6F9A009910FF /* SearchViewController.xib */,
+				F6A332BB184749CD00576FDD /* HttpConnection.h */,
+				F6A332BC184749CD00576FDD /* HttpConnection.m */,
 			);
 			name = TravelRecord;
 			path = TraveRecord;
@@ -351,6 +356,7 @@
 				F66F4A92183B71A6009910FF /* MapViewController.m in Sources */,
 				F66F4A9E183B7AF2009910FF /* SettingViewController.m in Sources */,
 				F66F4AA8183F6F9B009910FF /* SearchViewController.m in Sources */,
+				F6A332BD184749CD00576FDD /* HttpConnection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

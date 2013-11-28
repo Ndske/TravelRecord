@@ -54,6 +54,13 @@ add
 has-props
 has-prop-mods
 
+HttpConnection.h
+file
+
+
+
+add
+
 SearchViewController.xib
 file
 
@@ -69,6 +76,13 @@ dir
 add
 
 SearchViewController.h
+file
+
+
+
+add
+
+HttpConnection.m
 file
 
 
@@ -117,20 +131,6 @@ file
 
 add
 
-Default.png
-file
-
-
-
-add
-
-
-
-
-
-has-props
-has-prop-mods
-
 MapViewController.m
 file
 
@@ -144,6 +144,20 @@ file
 
 
 add
+
+Default.png
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
 
 TraveRecord.xcdatamodeld
 dir
