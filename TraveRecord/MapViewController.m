@@ -13,6 +13,7 @@
 
     float selectedLatitude;
     float selectedLongitude;
+
 }
 
 @end
@@ -20,13 +21,13 @@
 @implementation MapViewController{
  
     GMSMapView *mapView_;
-
 }
 
 - (id)init
 {
     self = [super init];
     if(self){
+        
         //Title
         self.title = appTitle;
     
@@ -46,6 +47,7 @@
         
         //NavigationBar
         self.navigationItem.rightBarButtonItem = rbbi;
+        self.navigationItem.leftBarButtonItem = lbbi;
     }
     return self;
 }
@@ -84,7 +86,14 @@
 - (void)showSearchView:(id)sender
 {
     srcVc = [[SearchViewController alloc]init];
-    
+    UIAlertView *search = [[UIAlertView alloc]
+                           initWithTitle:searchViewTitle
+                           message:@"探す場所の住所を入力してください"
+                           delegate:self
+                           cancelButtonTitle:@"Cancel"
+                           otherButtonTitles:@"Search", nil];
+    [search setAlertViewStyle:UIAlertViewStylePlainTextInput];
+    [search show];
 }
 
 - (void)mapView:(GMSMapView *)mapView didTapAtCoordinate:(CLLocationCoordinate2D)coordinate
@@ -98,8 +107,8 @@
 - (void) showAlertView
 {
     UIAlertView *alert = [[UIAlertView alloc]
-                          initWithTitle:@"この場所に追加しますか？"
-                          message:nil
+                          initWithTitle:addSpotViewTitle
+                          message:@"この場所に追加しますか？"
                           delegate:self
                           cancelButtonTitle:@"Cancel"
                           otherButtonTitles:@"Add Marker", nil];
@@ -108,14 +117,31 @@
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    switch (buttonIndex) {
-        case 1:
-            [self createMarker:CLLocationCoordinate2DMake(selectedLatitude, selectedLongitude) title:@"Title" showAnimation:YES];
-            break;
-            
-        default:
-            break;
+    if([alertView.title isEqualToString:searchViewTitle]){
+        
+        switch (buttonIndex) {
+            case 1:
+                [self searchSpot:[[alertView textFieldAtIndex:0]text]];
+                break;
+                
+            default:
+                break;
+        }
+    }else if([alertView.title isEqualToString:addSpotViewTitle]){
+        switch (buttonIndex) {
+            case 1:
+                [self createMarker:CLLocationCoordinate2DMake(selectedLatitude, selectedLongitude) title:@"Title" showAnimation:YES];
+                break;
+                
+            default:
+                break;
+        }
     }
+}
+
+- (NSString *)searchSpot:(NSString *)serchText
+{
+    NSLog(@"%@",serchText);
 }
 
 - (void)mapView:(GMSMapView *)mapView didTapInfoWindowOfMarker:(GMSMarker *)marker

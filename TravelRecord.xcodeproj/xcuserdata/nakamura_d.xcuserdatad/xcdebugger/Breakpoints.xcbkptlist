@@ -8,12 +8,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "TraveRecord/MapViewController.m"
-         timestampString = "406810742.796377"
+         timestampString = "407246952.772034"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "116"
-         endingLineNumber = "116"
-         landmarkName = "-alertView:clickedButtonAtIndex:"
+         startingLineNumber = "108"
+         endingLineNumber = "108"
+         landmarkName = "-showAlertView"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -21,13 +21,13 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "TraveRecord/MapViewController.m"
-         timestampString = "406810742.796377"
+         timestampString = "407247366.097837"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "100"
-         endingLineNumber = "100"
-         landmarkName = "-showAlertView"
-         landmarkType = "5">
+         startingLineNumber = "17"
+         endingLineNumber = "17"
+         landmarkName = "@interface MapViewController()"
+         landmarkType = "2">
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>

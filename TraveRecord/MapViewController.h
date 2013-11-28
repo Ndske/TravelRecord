@@ -11,6 +11,9 @@
 #import <GoogleMaps/GoogleMaps.h>
 #import "SearchViewController.h"
 
+#define searchViewTitle @"スポット検索"
+#define addSpotViewTitle  @"スポット追加"
+
 @interface MapViewController : UIViewController<GMSMapViewDelegate>{
     
     SettingViewController *stgVc;
