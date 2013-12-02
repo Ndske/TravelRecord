@@ -13,7 +13,7 @@
 
     float selectedLatitude;
     float selectedLongitude;
-
+    HttpConnection *conn;
 }
 
 @end
@@ -142,7 +142,9 @@
 - (NSString *)searchSpot:(NSString *)serchText
 {
     NSLog(@"%@",serchText);
-    HttpConnection *conn = [[[HttpConnection alloc]init]getAddressJson:serchText sensor:FALSE];
+    conn = [[HttpConnection alloc]init];
+    [conn getAddressJson:serchText sensor:NO];
+    return @"";
 }
 
 - (void)mapView:(GMSMapView *)mapView didTapInfoWindowOfMarker:(GMSMarker *)marker
