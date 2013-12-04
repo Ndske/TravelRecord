@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F637A0ED184F4B16001E34E5 /* SpotInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F637A0EB184F4B16001E34E5 /* SpotInfoViewController.m */; };
+		F637A0EE184F4B16001E34E5 /* SpotInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F637A0EC184F4B16001E34E5 /* SpotInfoViewController.xib */; };
 		F66F4A3D183B7025009910FF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F66F4A3C183B7025009910FF /* UIKit.framework */; };
 		F66F4A3F183B7025009910FF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F66F4A3E183B7025009910FF /* Foundation.framework */; };
 		F66F4A41183B7025009910FF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F66F4A40183B7025009910FF /* CoreGraphics.framework */; };
@@ -41,7 +43,6 @@
 		F66F4A9E183B7AF2009910FF /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F66F4A9C183B7AF2009910FF /* SettingViewController.m */; };
 		F66F4AA8183F6F9B009910FF /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F66F4AA6183F6F9A009910FF /* SearchViewController.m */; };
 		F66F4AA9183F6F9B009910FF /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F66F4AA7183F6F9A009910FF /* SearchViewController.xib */; };
-		F6A332BD184749CD00576FDD /* HttpConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A332BC184749CD00576FDD /* HttpConnection.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F637A0EA184F4B16001E34E5 /* SpotInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpotInfoViewController.h; path = ../SpotInfoViewController.h; sourceTree = "<group>"; };
+		F637A0EB184F4B16001E34E5 /* SpotInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpotInfoViewController.m; path = ../SpotInfoViewController.m; sourceTree = "<group>"; };
+		F637A0EC184F4B16001E34E5 /* SpotInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SpotInfoViewController.xib; path = ../SpotInfoViewController.xib; sourceTree = "<group>"; };
 		F66F4A39183B7025009910FF /* TravelRecord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelRecord.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F66F4A3C183B7025009910FF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F66F4A3E183B7025009910FF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -97,8 +101,6 @@
 		F66F4AA5183F6F99009910FF /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		F66F4AA6183F6F9A009910FF /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		F66F4AA7183F6F9A009910FF /* SearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
-		F6A332BB184749CD00576FDD /* HttpConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpConnection.h; sourceTree = "<group>"; };
-		F6A332BC184749CD00576FDD /* HttpConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpConnection.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +188,9 @@
 		F66F4A44183B7025009910FF /* TravelRecord */ = {
 			isa = PBXGroup;
 			children = (
+				F637A0EA184F4B16001E34E5 /* SpotInfoViewController.h */,
+				F637A0EB184F4B16001E34E5 /* SpotInfoViewController.m */,
+				F637A0EC184F4B16001E34E5 /* SpotInfoViewController.xib */,
 				F66F4A4D183B7025009910FF /* AppDelegate.h */,
 				F66F4A4E183B7025009910FF /* AppDelegate.m */,
 				F66F4A56183B7025009910FF /* TraveRecord.xcdatamodeld */,
@@ -198,8 +203,6 @@
 				F66F4AA5183F6F99009910FF /* SearchViewController.h */,
 				F66F4AA6183F6F9A009910FF /* SearchViewController.m */,
 				F66F4AA7183F6F9A009910FF /* SearchViewController.xib */,
-				F6A332BB184749CD00576FDD /* HttpConnection.h */,
-				F6A332BC184749CD00576FDD /* HttpConnection.m */,
 			);
 			name = TravelRecord;
 			path = TraveRecord;
@@ -316,6 +319,7 @@
 				F66F4A55183B7025009910FF /* Default-568h@2x.png in Resources */,
 				F66F4A97183B7329009910FF /* GoogleMaps.bundle in Resources */,
 				F66F4AA9183F6F9B009910FF /* SearchViewController.xib in Resources */,
+				F637A0EE184F4B16001E34E5 /* SpotInfoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,7 +360,7 @@
 				F66F4A92183B71A6009910FF /* MapViewController.m in Sources */,
 				F66F4A9E183B7AF2009910FF /* SettingViewController.m in Sources */,
 				F66F4AA8183F6F9B009910FF /* SearchViewController.m in Sources */,
-				F6A332BD184749CD00576FDD /* HttpConnection.m in Sources */,
+				F637A0ED184F4B16001E34E5 /* SpotInfoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

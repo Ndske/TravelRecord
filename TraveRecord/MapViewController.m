@@ -7,13 +7,11 @@
 //
 
 #import "MapViewController.h"
-#import "Const.h"
 
 @interface MapViewController (){
 
     float selectedLatitude;
     float selectedLongitude;
-    HttpConnection *conn;
 }
 
 @end
@@ -55,13 +53,11 @@
 - (void)viewDidLoad
 {
     
-//    [super viewDidLoad];
+    // Create a GMSCameraPosition that tells the map to display the default position and default zoom
+    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:defaultLatitude
+                                                            longitude:defaultLongitude
+                                                                 zoom:defaultZoom];
     
-    // Create a GMSCameraPosition that tells the map to display the
-    // coordinate -33.86,151.20 at zoom level 6.
-    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:-33.86
-                                                            longitude:151.20
-                                                                 zoom:6];
     mapView_ = [GMSMapView mapWithFrame:CGRectZero camera:camera];
     
     mapView_.delegate = self;
@@ -70,11 +66,12 @@
     mapView_.indoorEnabled = NO;
     
     self.view = mapView_;
-    
-    // Creates a marker in the center of the map.
-    [self createMarker:CLLocationCoordinate2DMake(-33.86, 151.20) title:@"Sydney" showAnimation:YES];
 
-    [self createMarker:CLLocationCoordinate2DMake(-34, 152) title:@"22" showAnimation:YES];
+}
+
+- (void)moveMapCenterTo:(float)latitude longitude:(float)longitude zoom:(float)zoom
+{
+    [mapView_ animateToLocation:CLLocationCoordinate2DMake(latitude, longitude)];
 }
 
 - (void)showSettingView:(id)sender
@@ -139,17 +136,85 @@
     }
 }
 
-- (NSString *)searchSpot:(NSString *)serchText
+- (void)searchSpot:(NSString *)serchText
 {
-    NSLog(@"%@",serchText);
-    conn = [[HttpConnection alloc]init];
-    [conn getAddressJson:serchText sensor:NO];
-    return @"";
+    NSString *isSensorText = @"false";
+    NSString *urlAsString = [NSString stringWithFormat:@"%@%@%@%@",URLmain,serchText,URLsensor,isSensorText];
+    NSURL *url = [NSURL URLWithString:urlAsString];
+    
+    NSLog(@"%@",url);
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    NSOperationQueue *oQueue = [[NSOperationQueue alloc]init];
+    
+    [NSURLConnection sendAsynchronousRequest:request queue:oQueue completionHandler:^(NSURLResponse *response, NSData *data, NSError *error){
+        
+        if([data length] > 0 && error == nil){
+            
+            NSError *error = nil;
+            id jsonObject = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
+            if(jsonObject != nil && error == nil){
+                if([jsonObject isKindOfClass:[NSDictionary class]]){
+                    
+                    NSDictionary *deserializedDictionary = (NSDictionary *)jsonObject;
+                    [self reflectSearch:deserializedDictionary];
+                    
+                }else
+                    if([jsonObject isKindOfClass:[NSArray class]]){
+                    
+                    //NSArray *deserializedArray = (NSArray *)jsonObject;
+                    NSLog(@"Unsupported data was downloaded");
+                    
+                }else{
+                    NSLog(@"Unsupported data was downloaded");
+                }
+            }
+            
+        }else if([data length] == 0 && error == nil){
+            NSLog(@"Nothing was downloaded");
+        }else if(error != nil){
+            NSLog(@"Error happend");
+        }
+    }];
+}
+
+- (void)reflectSearch:(NSDictionary *)resultDictionary
+{
+    NSString *status = [resultDictionary objectForKey:@"status"];
+    if([status isEqualToString:@"OK"]){
+        
+        NSArray *tempArray = [resultDictionary objectForKey:@"results"];
+        NSDictionary *tempDic = [tempArray objectAtIndex:0];
+        NSString *formatted_address = [tempDic objectForKey:@"formatted_address"];
+        NSDictionary *geometry = [tempDic objectForKey:@"geometry"];
+        NSDictionary *location = [geometry objectForKey:@"location"];
+        NSString *lng = [location objectForKey:@"lng"];
+        NSString *lat = [location objectForKey:@"lat"];
+        NSLog(@"CREATE NEW MARKER >>> \naddress = %@\nlongitude = %@\nlatitude = %@",formatted_address,lng,lat);
+        
+        //terminate in main thread
+        NSOperationQueue *mainQueue = [NSOperationQueue mainQueue];
+        [mainQueue addOperationWithBlock:^{
+            [self createMarker:CLLocationCoordinate2DMake(lat.floatValue, lng.floatValue) title:formatted_address showAnimation:YES];
+            [self moveMapCenterTo:lat.floatValue longitude:lng.floatValue zoom:defaultZoom];
+        }];
+    }
 }
 
 - (void)mapView:(GMSMapView *)mapView didTapInfoWindowOfMarker:(GMSMarker *)marker
 {
-    NSLog(@"InfoWindow");
+    [self showSpotInfoView];
+}
+
+- (void)showSpotInfoView
+{
+    SpotInfoViewController *siv = [[SpotInfoViewController alloc]init];
+    [self presentViewController:siv animated:YES completion:nil];
+}
+
+- (void)dismissSpotInfoView
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (GMSMarker *)createMarker:(CLLocationCoordinate2D) coord title:(NSString*)title showAnimation:(BOOL)showAnimation
