@@ -23,7 +23,15 @@
 #define defaultLongitude 151.20
 #define defaultZoom 10
 
-@interface MapViewController : UIViewController<GMSMapViewDelegate>{
+@protocol SpotInfoDelegate
+
+- (void)editMemo;
+- (void)closeSpotInfo;
+- (void)searchNextSpot;
+
+@end
+
+@interface MapViewController : UIViewController<GMSMapViewDelegate,SpotInfoDelegate>{
     
     SettingViewController *stgVc;
     SearchViewController *srcVc;

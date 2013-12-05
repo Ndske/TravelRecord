@@ -9,7 +9,9 @@
 #import "SpotInfoViewController.h"
 
 @interface SpotInfoViewController ()
-
+{
+    NSString *spotNameText;
+}
 @end
 
 @implementation SpotInfoViewController
@@ -26,13 +28,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    [spotName setText:spotNameText];
 }
 
-- (void)didReceiveMemoryWarning
+- (void)spotName:(NSString *)name
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    spotNameText = name;
 }
 
 - (IBAction)closeSpotInfoView:(id)sender {

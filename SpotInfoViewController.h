@@ -10,12 +10,12 @@
 
 @interface SpotInfoViewController : UIViewController
 {
-    __weak IBOutlet UILabel *spotname;
+    __weak IBOutlet UILabel *spotName;
     __weak IBOutlet UIImageView *spotImage;
     __weak IBOutlet UITextField *spotMemo;
-
-
+    
 }
+- (void)spotName:(NSString *)name;
 - (IBAction)closeSpotInfoView:(id)sender;
 - (IBAction)searchNextSpot:(id)sender;
 

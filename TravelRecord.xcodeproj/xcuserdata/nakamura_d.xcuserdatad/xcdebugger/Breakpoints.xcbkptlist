@@ -120,5 +120,18 @@
          landmarkName = "-reflectSearch:"
          landmarkType = "5">
       </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "TraveRecord/MapViewController.h"
+         timestampString = "407935278.087355"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "29"
+         endingLineNumber = "29"
+         landmarkName = "-closeSpotInfo"
+         landmarkType = "4">
+      </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>

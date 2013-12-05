@@ -203,12 +203,14 @@
 
 - (void)mapView:(GMSMapView *)mapView didTapInfoWindowOfMarker:(GMSMarker *)marker
 {
-    [self showSpotInfoView];
+    NSLog(@"%@",marker.title);
+    [self showSpotInfoView:marker.title];
 }
 
-- (void)showSpotInfoView
+- (void)showSpotInfoView:(NSString *)title
 {
     SpotInfoViewController *siv = [[SpotInfoViewController alloc]init];
+    [siv spotName:title];
     [self presentViewController:siv animated:YES completion:nil];
 }
 
